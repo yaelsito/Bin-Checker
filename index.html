@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bin Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    [redes="si"] {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="dark-mode-toggle">
+        <label class="form-check-label" for="dark-mode-toggle">Modo Oscuro</label>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <h1 class="text-center text-primary fw-bold">BIN CHECKER</h1>
+      <div class="col-md-6">
+        <div class="mb-2">
+          <label for="campoBin" class="form-label">Coloca un BIN:</label>
+          <input id="campoBin" type="text" class="form-control mb-1" placeholder="por ejemplo 414720">
+        </div>
+
+        <div class="text-center"><button id="checarBin" class="btn btn-outline-primary mb-2">Checar</button></div>
+        <div id="resultados" class="table-responsive mb-1">
+          <table class="table table-striped-columns table-hover table-bordered border-primary">
+            <thead>
+              <tr>
+                <th scope="col">DATOS</th>
+                <th scope="col">RESULTADOS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Modelo:</td>
+                <td id="brand"></td>
+              </tr>
+              <tr>
+                <td>Banco:</td>
+                <td id="bank"></td>
+              </tr>
+              <tr>
+                <td>País:</td>
+                <td id="country"></td>
+              </tr>
+              <tr>
+                <td>Tipo de Tarjeta:</td>
+                <td id="type"></td>
+              </tr>
+              <tr>
+                <td>Marca:</td>
+                <td id="scheme"></td>
+              </tr>
+              <tr>
+                <td>Es prepago?</td>
+                <td id="prepaid"></td>
+              </tr>
+              <tr>
+                <td>Divisa:</td>
+                <td id="currency"></td>
+              </tr>
+              <tr>
+                <td>Ciudad:</td>
+                <td id="city"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--FOOTER-->
+  <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 px-3 border-warning border-2 border-top"
+    style="background-color: #dc3545">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 link-light link-offset-2 text-decoration-none lh-1" id="spoti2">
+        <i class="fa-solid fa-credit-card fa-xl"></i>
+      </a>
+      <span class="mb-3 mb-md-0 text-light fw-bold">© 2023 Bin Checker</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3">
+        <a redes="si" href="https://www.facebook.com/yaelmassieuwu" target="_blank"><i
+            class="fa-brands fa-facebook fa-bounce fa-xl" style="--fa-animation-duration: 3s"></i></a>
+      </li>
+      <li class="ms-3">
+        <a redes="si" href="https://www.instagram.com/yaelmassieuwu" target="_blank"><i
+            class="fa-brands fa-instagram fa-bounce fa-xl" style="--fa-animation-duration: 3s"></i></a>
+      </li>
+      <li class="ms-3">
+        <a redes="si" href="https://github.com/bystrokr" target="_blank"><i class="fa-brands fa-github fa-bounce fa-xl"
+            style="--fa-animation-duration: 3s"></i></a>
+      </li>
+    </ul>
+    <div class="container">
+      <ul class="nav justify-content-center border-warning border-top pb-3 mt-3">
+        <li class="nav-item">
+          <a href="https://yael.pages.dev/" target="_blank" class="nav-link px-2 link-light link-offset-2"><i
+              class="fa-solid fa-user"></i>
+            Desarrollador</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/bystrokr/Bin-Checker" target="_blank"
+            class="nav-link px-2 link-light link-offset-2"><i class="fa-solid fa-code"></i> Código Fuente</a>
+        </li>
+        <li class="nav-item">
+          <a href="https://stery.dev/" target="_blank" class="nav-link px-2 link-light link-offset-2"><i
+              class="fa-solid fa-screwdriver-wrench"></i> Otras
+            herramientas</a>
+        </li>
+      </ul>
+      <p class="text-center text-light fw-bold">
+        <i class="fa-solid fa-circle-info"></i> Este sitio web es gratuito,
+        sin anuncios, libre de virus y de código abierto en:
+        <a href="https://github.com/bystrokr/Bin-Checker" class="nav-link link-dark"><i class="fa-brands fa-github"></i>
+          Github.</a>
+      </p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="info.js"></script>
+</body>
+
+</html>
